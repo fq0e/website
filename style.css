@@ -1,11 +1,7 @@
-@font-face {
-    font-family: "nf";
-    src: url("https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/Agave/AgaveNerdFont-Regular.ttf") format("truetype");
-}
 
 body {
     background-color: #1e1e2e;
-    font-family: "nf";
+    font-family: monospace;
 }
 
 .container {
