@@ -11,6 +11,7 @@ body {
 
 .langs {
     text-align: center;
+    transform: rotate(90);
 }
 
 .socials {
@@ -94,4 +95,15 @@ p {
 
 #bsky {
     border-radius: 16px;
+}
+
+#a{
+    background-color:yellow;
+    border:2px solid red;    
+}
+
+.tooltip {
+    display: inline-block;
+    font-size: 0px;
+    color: #bac2de;
 }
