@@ -1,0 +1,250 @@
+@font-face {
+  font-family: 'vcr_osd_monoregular';
+  src: url('vcr_osd_mono_1.001-webfont.woff2') format('woff2'),
+    url('vcr_osd_mono_1.001-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@keyframes funnyrotation {
+  0% {
+    transform: rotate(-5deg);
+  }
+
+  50% {
+    transform: rotate(5deg);
+  }
+
+  100% {
+    transform: rotate(-5deg);
+  }
+}
+
+:root {
+  --text: #f2d9ed;
+  --background: #0b040a;
+  --primary: #501b45;
+  --secondary: #2e0f27;
+  --accent: #c247a7;
+}
+
+body {
+  overflow: hidden;
+  background-color: var(--background);
+  color: var(--text);
+  font-family: "vcr_osd_monoregular";
+}
+
+button {
+  background-color: rgba(0, 0, 0, 0);
+  border-radius: 0px;
+  border: 0px;
+  font-family: "vcr_osd_monoregular";
+
+  transition: 0.35s cubic-bezier(0.075, 0.82, 0.165, 1);
+  color: var(--primary);
+}
+
+button:hover {
+  transition: 0.35s cubic-bezier(0.075, 0.82, 0.165, 1);
+  color: var(--text)
+}
+
+a {
+  color: var(--text);
+  text-decoration: none;
+}
+
+#container {
+  width: 450px;
+  margin: auto;
+}
+
+#introtext {
+  position: relative;
+  left: -55px
+}
+
+#funnytext {
+  position: relative;
+  left: 160px;
+  top: -28px;
+  color: var(--accent);
+  animation-name: funnyrotation;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+#topbar {
+  background-color: var(--secondary);
+  border-radius: 16px;
+  position: relative;
+  height: 50px;
+  text-align: center;
+}
+
+.topButton {
+  position: relative;
+  transform: scale(2);
+  margin-left: 70px;
+  left: -30px;
+  top: 15px;
+  text-align: center;
+}
+
+#Blinkies {
+  text-align: center;
+  image-rendering: pixelated;
+}
+
+#Buttons {
+  text-align: center;
+  image-rendering: pixelated;
+}
+
+
+.page {
+  text-align: center;
+}
+
+hr.dotted {
+  border-top: 3px dotted var(--text);
+  opacity: 0.5;
+}
+
+.Button {
+  cursor: pointer;
+}
+
+.copy {
+  cursor: pointer;
+  user-select: none;
+}
+
+.contacts {
+  z-index: 10;
+}
+
+hr.dotted {
+  border-top: 3px dotted var(--text);
+  border-bottom: 3px dotted var(--text);
+}
+
+.rain {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -5;
+}
+
+.rain.back-row {
+  display: none;
+  z-index: -5;
+  bottom: 60px;
+  opacity: 0.5;
+}
+
+.drop {
+  position: absolute;
+  bottom: 100%;
+  width: 15px;
+  height: 120px;
+  pointer-events: none;
+  animation: drop 0.5s linear infinite;
+}
+
+@keyframes drop {
+  0% {
+    transform: translateY(0vh);
+  }
+
+  75% {
+    transform: translateY(90vh);
+  }
+
+  100% {
+    transform: translateY(90vh);
+  }
+}
+
+.stem {
+  width: 1px;
+  height: 60%;
+  margin-left: 7px;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.25));
+  animation: stem 0.5s linear infinite;
+  z-index: -5;
+}
+
+@keyframes stem {
+  0% {
+    opacity: 1;
+  }
+
+  65% {
+    opacity: 1;
+  }
+
+  75% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+.splat {
+  width: 15px;
+  height: 10px;
+  border-top: 2px dotted rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  opacity: 1;
+  transform: scale(0);
+  animation: splat 0.5s linear infinite;
+  display: none;
+}
+
+div.splat-toggle .splat {
+  display: block;
+}
+
+@keyframes splat {
+  0% {
+    opacity: 1;
+    transform: scale(0);
+  }
+
+  80% {
+    opacity: 1;
+    transform: scale(0);
+  }
+
+  90% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(1.5);
+  }
+}
+
+.splat-toggle {
+  top: 20px;
+}
+
+.single-toggle {
+  top: 160px;
+}
+
+body.single-toggle .drop {
+  display: none;
+}
+
+body.single-toggle .drop:nth-child(10) {
+  display: block;
+}
