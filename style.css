@@ -61,15 +61,16 @@ a {
 }
 
 #introtext {
+  display: flex;
   position: relative;
-  left: -55px
+  left: 75px
 }
 
 #funnytext {
   position: relative;
-  left: 170px;
-  top: -40px;
+  left: 25px;
   color: var(--accent);
+  display: block;
   animation-name: funnyrotation;
   animation-duration: 2s;
   animation-iteration-count: infinite;
