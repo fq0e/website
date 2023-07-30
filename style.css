@@ -273,3 +273,9 @@ body.single-toggle .drop:nth-child(10) {
   font-size: 12px;
   opacity: 1;
 }
+
+.logo {
+  position: relative;
+  top: 5px;
+  filter: brightness(0) saturate(100%) invert(37%) sepia(81%) saturate(2273%) hue-rotate(288deg) brightness(84%) contrast(76%);
+}
