@@ -132,6 +132,8 @@ hr.dotted {
   border-bottom: 3px dotted var(--text);
 }
 
+/* rain */
+
 .rain {
   position: absolute;
   left: 0;
@@ -248,4 +250,26 @@ body.single-toggle .drop {
 
 body.single-toggle .drop:nth-child(10) {
   display: block;
+}
+
+/* album stuff */
+
+#spotifyImage {
+  z-index: 2;
+}
+
+#spotifyAlbum > #albumName {
+  transition: 0.35s cubic-bezier(0.075, 0.82, 0.165, 1);
+  position: relative;
+  top: -25px;
+  z-index: 1;
+  font-size: 0px;
+  opacity: 0;
+}
+#spotifyAlbum:hover > #albumName {
+  transition: 0.35s cubic-bezier(0.075, 0.82, 0.165, 1);
+  position: relative;
+  top: 10px;
+  font-size: 12px;
+  opacity: 1;
 }
