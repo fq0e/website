@@ -1,10 +1,3 @@
-const colors = {
-    offline: "#f2d9ed",
-    online: "#57a55a",
-    idle: "#ffcc00",
-    dnd: "#bf5752"
-}
-
 setTimeout(() => {
     function httpGet(theUrl)
     {
@@ -18,9 +11,8 @@ setTimeout(() => {
     const data = JSON.parse(req).data
     const status = data.discord_status.toUpperCase()
     const listening = data.listening_to_spotify
-    const color = colors[status.toLowerCase()]
 
-    document.getElementById("discordStatus").innerHTML = `currently <span style="color: ${color}">${status}</span> on discord`
+    document.getElementById("discordStatus").innerHTML = `currently <span style="color: #c247a7">${status}</span> on discord`
 
     if (listening  == true) {
         const album = data.spotify.album
@@ -29,12 +21,12 @@ setTimeout(() => {
 
         const album_art = data.spotify.album_art_url
 
-        document.getElementById("spotifyStatus").innerHTML = `listening to ${song} <br> by ${artist}`
+        document.getElementById("spotifyStatus").innerHTML = `listening to <span style="color: #c247a7">${song}</span> <br> by <span style="color: #c247a7">${artist}</span>`
 
         document.getElementById("brah").style.display = "inline"
         document.getElementById("spotifyAlbum").style.display = "inline"
 
         document.getElementById("spotifyImage").src = album_art
-        document.getElementById("albumName").innerHTML = album
+        document.getElementById("albumName").innerHTML = `<span style="color: #c247a7">${album}</span>`
     }
 }, 0)
